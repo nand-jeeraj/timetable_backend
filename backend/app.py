@@ -5,7 +5,7 @@ from routes.timetable_routes import timetable_bp
 from routes.auth import auth_bp   
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:5173"}}, supports_credentials=True)
+CORS(app, resources={r"/api/*": {"origins": "https://ctapptime-table.netlify.app/login"}}, supports_credentials=True)
 
 @app.route("/")
 def home():
@@ -18,4 +18,5 @@ app.register_blueprint(timetable_bp, url_prefix="/api/timetable")
 
 if __name__ == "__main__":
      app.run(host="0.0.0.0", port=5000, debug=False)
+
 
